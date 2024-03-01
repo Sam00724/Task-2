@@ -1,0 +1,32 @@
+class Person {
+	
+String name;
+int age;
+   Person(){
+      this.age = 18;
+  }
+ 
+  Person(String passedName, int passedAge){
+      this.name = passedName;
+      this.age = passedAge;
+  }
+ 
+  void display(){
+      System.out.println(name + " " + age);
+  }
+ 
+}
+public class Main
+{
+    public static void main(String[] args) {
+       Person person1 = new Person();
+      person1.display();
+      Person person2 = new Person("Shervin", 23);
+     person2.display();
+    }
+}
+
+
+OUTPUT:
+null 18
+Shervin 23
