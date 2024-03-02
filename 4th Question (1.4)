@@ -1,0 +1,49 @@
+//Person.java
+
+public class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void displayPersonDetails() {
+        System.out.println("Name: " + this.name);
+        System.out.println("Age: " + this.age);
+    }
+}
+
+class Employee extends Person {
+    int employeeID;
+    double salary;
+
+    public Employee(String name, int age, int employeeID, double salary) {
+        super(name, age); //super keyword
+        this.employeeID = employeeID;
+        this.salary = salary;
+    }
+
+    public void displayEmployeeDetails() {
+        System.out.println("Employee ID: " + this.employeeID);
+        System.out.println("Salary: " + this.salary);
+        System.out.println("Name: " + this.name); 
+        System.out.println("Age: " + this.age); 
+    }
+
+    public static void main(String[] args) {
+        Employee employee1 = new Employee("Shervin", 30, 123, 50000.0);
+        employee1.displayEmployeeDetails();
+        employee1.displayPersonDetails();
+    }
+}
+
+OUTPUT:
+
+Employee ID: 123
+Salary: 50000.0
+Name: Shervin
+Age: 30
+Name: Shervin
+Age: 30
