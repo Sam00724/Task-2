@@ -1,0 +1,60 @@
+//Account.java
+
+public class Account {
+    int accountNumber;
+    double balance;
+
+    public Account() {
+        this.accountNumber = 0;
+        this.balance = 0.0;
+    }
+    public Account(int accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    // a. Method to deposit the amount to the account
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            System.out.println("Amount deposited successfully. New balance: " + this.balance);
+        } else {
+            System.out.println("Invalid amount. Please enter a positive number.");
+        }
+    }
+
+    // b. Method to withdraw the amount from the account
+    public void withdraw(double amount) {
+        if (amount > 0 && this.balance >= amount) {
+            this.balance -= amount;
+            System.out.println("Amount withdrawn successfully. New balance: " + this.balance);
+        } else {
+            System.out.println("Invalid amount or insufficient balance. Please enter a positive number less than or equal to the current balance.");
+        }
+    }
+
+    //c. Method to display the Balance
+    public void displayBalance() {
+        System.out.println("Account Number: " + this.accountNumber + "\nBalance: " + this.balance);
+    }
+
+    public static void main(String[] args) {
+        Account account1 = new Account(12345, 500.0);
+        Account account2 = new Account();
+
+        account1.deposit(100.0);
+        account1.withdraw(50.0);
+        account1.displayBalance();
+
+        account2.deposit(200.0);
+        account2.withdraw(100.0);
+        account2.displayBalance();
+    }
+}
+
+OUTPUT:
+
+Amount withdrawn successfully. New balance: 100.0
+Account Number: 0
+Balance: 100.0
+
